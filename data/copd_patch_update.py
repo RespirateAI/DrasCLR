@@ -23,7 +23,7 @@ class COPD_dataset(Dataset):
         self.neighbor_transforms = neighbor_transforms
 
         # atlas patch locations, our refernce file can be found at ./preprocess/misc/atlas_patch_loc.npy
-        self.patch_loc = np.load(self.args.root_dir + "atlas_patch_loc_case_0094.npy")
+        self.patch_loc = np.load(self.args.root_dir + "atlas_patch_loc_case_0110.npy")
         # pairwise distance
         # self.dists = pairwise_distances(self.patch_loc, metric="euclidean")
         # normalize patch locations
@@ -169,11 +169,11 @@ class COPD_dataset(Dataset):
             img = np.load(self.root_dir + "patch/" + sid + "_patch.npy")
             img = np.clip(img, -1024, 240)  # clip input intensity to [-1024, 240]
             img = img + 1024.0
-            print(img.shape)
+            # print(img.shape)
             img = (
                 img[:, None, :, :, :] / 632.0 - 1
             )  # Normalize to [-1,1], 632=(1024+240)/2
-            print(img.shape)
+            # print(img.shape)
 
             # patch locations for all 581 patches
             patch_loc_idx = self.patch_loc
@@ -186,4 +186,6 @@ class COPD_dataset(Dataset):
             #     self.metric_dict[key]
             # )  # extract sid from the first 6 letters
 
-            return img, patch_loc_idx
+            print(f"Loading {sid}")
+
+            return sid, img, patch_loc_idx

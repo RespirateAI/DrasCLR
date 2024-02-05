@@ -75,7 +75,7 @@ def main_worker(args):
         test_dataset_patch,
         batch_size=1,
         shuffle=False,
-        num_workers=10,
+        num_workers=1,
         pin_memory=True,
         drop_last=False,
     )
@@ -97,18 +97,20 @@ def main_worker(args):
     print("Starting Inference")
     with torch.no_grad():
         for i, batch in enumerate(iterator):
-            images, patch_loc_idx = batch
-            print(images.shape)
+            sid, images, patch_loc_idx = batch
+            # print(images.shape)
             # sid_lst.append(sid[0])
             images = images[0].float().cuda()
             patch_loc_idx = patch_loc_idx[0].float().cuda()
             print("Loading to model")
             _, pred = model_patch(images, patch_loc_idx)
-            pred_arr[i, :, :] = pred.cpu().numpy()
+            pred = pred.cpu().numpy()
+            pred_arr[i, :, :] = pred
             # feature_arr[i:i+1, :] = labels
             iterator.set_description(
                 "Propagating (%d / %d Steps)" % (i, len(test_dataset_patch))
             )
+            np.save("./embeddings/"+sid[0]+".npy", pred)
     # np.save(os.path.join(args.patch_rep_dir, "sid_arr_full.npy"), sid_lst)
     np.save(os.path.join(args.patch_rep_dir, "pred_arr_patch_full.npy"), pred_arr)
     # np.save(os.path.join(args.patch_rep_dir, "feature_arr_patch_full.npy"), feature_arr)
