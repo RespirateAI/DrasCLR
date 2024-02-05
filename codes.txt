@@ -1,2 +1,3 @@
-python 1_patchify_atlas_copy.py --atlas_image misc/COPD_Atlas_INSP_BSpline_Iso1mm.nii.gz --output_dir ./patch_data_32_6_reg --patch_size 32 --step_size 26
-python extract_feature_copy.py --exp-name='./DrasCLR_pretrained_ckpt' --checkpoint-patch='checkpoint_DrasCLR_COPDGene.pth.tar'
+python 1_patchify_atlas_update.py --atlas_image misc/COPD_Atlas_INSP_BSpline_Iso1mm.nii.gz --output_dir ./patch_data_32_6_reg --patch_size 32 --step_size 26
+python extract_feature_update.py --exp-name='./DrasCLR_pretrained_ckpt' --checkpoint-patch='checkpoint_DrasCLR_COPDGene.pth.tar'
+python 1_patchify_atlas_update_all.py --image_dir ../../../Chaimeleon_flat --output_dir ./patch_chaimeleon --patch_size 32 --step_size 26
