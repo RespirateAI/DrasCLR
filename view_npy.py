@@ -11,7 +11,8 @@ if __name__ == "__main__":
     # filename = "./preprocess/patch_data_32_6_reg/atlas_patch_loc_COPD_Atlas_INSP_BSpline_Iso1mm.npy"
     # filename = "./preprocess/patch_data_chaimeleon/patch/case_0109_patch.npy"
     # filename = "DrasCLR_pretrained_ckpt/patch_rep/pred_arr_patch_full.npy"
-    filename = "/media/ravindu/SSD-PLU3/Lung_CT_Dataset/Lung-PET-CT-Dx-NBIA-Manifest-122220/DrasNew/DrasCLR/embeddings/case_0110.npy"
+    # filename = "/media/ravindu/SSD-PLU3/Lung_CT_Dataset/Lung-PET-CT-Dx-NBIA-Manifest-122220/DrasNew/DrasCLR/embeddings/case_0110.npy"
+    filename = "/media/intellisense08/SSD-PLU3/Lung_CT_Dataset/Lung-PET-CT-Dx-NBIA-Manifest-122220/DrasNew/DrasCLR/embeddings_ct/Lung_Dx-A0078&06-09-2011-Thorax01ThoraxRoutine_Adult-09648&4.npy"
     arr = read_npy(filename)
     print(arr.shape)
     print(arr[0])

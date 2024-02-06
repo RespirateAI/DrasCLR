@@ -30,9 +30,9 @@ def crop_nifti(input_path, output_path, crop_value_xy, crop_value_z):
 
 
 # Example usage
-input_nifti_path = "/media/ravindu/SSD-PLU3/Lung_CT_Dataset/Lung-PET-CT-Dx-NBIA-Manifest-122220/DrasNew/DrasCLR/test/case_0110.nii.gz"
-output_nifti_path = "/media/ravindu/SSD-PLU3/Lung_CT_Dataset/Lung-PET-CT-Dx-NBIA-Manifest-122220/DrasNew/DrasCLR/test/case_0110_cropped3.nii.gz"
-crop_value_xy = 104  # You can adjust this value based on your requirement
-crop_value_z = 104
+input_nifti_path = "/media/ravindu/SSD-PLU3/Lung_CT_Dataset/Lung-PET-CT-Dx-NBIA-Manifest-122220/DrasNew/DrasCLR/test/Lung_Dx-A0200&10-02-2009-PET03WholebodyFirstHead_Adult-17944&10.000000-Thorax_1.0_B70f-28020.nii.gz"
+output_nifti_path = "/media/ravindu/SSD-PLU3/Lung_CT_Dataset/Lung-PET-CT-Dx-NBIA-Manifest-122220/DrasNew/DrasCLR/test/Lung_Dx-A0200&10-02-2009-PET03WholebodyFirstHead_Adult-17944&10.000000-Thorax_1.0_B70f-28020_cropped.nii.gz"
+crop_value_xy = 78  # You can adjust this value based on your requirement
+crop_value_z = 0
 
 crop_nifti(input_nifti_path, output_nifti_path, crop_value_xy, crop_value_z)

@@ -110,7 +110,7 @@ def main_worker(args):
             iterator.set_description(
                 "Propagating (%d / %d Steps)" % (i, len(test_dataset_patch))
             )
-            np.save("./embeddings/"+sid[0]+".npy", pred)
+            np.save("./embeddings_ct/"+sid[0]+".npy", pred)
     # np.save(os.path.join(args.patch_rep_dir, "sid_arr_full.npy"), sid_lst)
     np.save(os.path.join(args.patch_rep_dir, "pred_arr_patch_full.npy"), pred_arr)
     # np.save(os.path.join(args.patch_rep_dir, "feature_arr_patch_full.npy"), feature_arr)

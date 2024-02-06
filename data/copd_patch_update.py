@@ -23,7 +23,7 @@ class COPD_dataset(Dataset):
         self.neighbor_transforms = neighbor_transforms
 
         # atlas patch locations, our refernce file can be found at ./preprocess/misc/atlas_patch_loc.npy
-        self.patch_loc = np.load(self.args.root_dir + "atlas_patch_loc_case_0110.npy")
+        self.patch_loc = np.load(self.args.root_dir + "atlas_patch_loc_Lung_Dx-A0078&06-09-2011-Thorax01ThoraxRoutine_Adult-09648&4.npy")
         # pairwise distance
         # self.dists = pairwise_distances(self.patch_loc, metric="euclidean")
         # normalize patch locations

@@ -40,7 +40,7 @@ def Image2Patch(inputImg, step_size, patch_size, acceptRate):
             range(78, img_size[1] - 78 - patch_size[1], step_size[1])
         ):
             for idx_z, z in enumerate(
-                range(52, img_size[2] - 52 - patch_size[2], step_size[2])
+                range(0, img_size[2] - 0 - patch_size[2], step_size[2])
             ):
                 # patchLblImg = sitk.RegionOfInterest(labelMaskImg, size=patch_size, index=[x,y,z])
                 # npPatchLblImg = sitk.GetArrayFromImage(patchLblImg)
