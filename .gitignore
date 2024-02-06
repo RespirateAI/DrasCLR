@@ -2,3 +2,6 @@ DrasCLR_pretrained_ckpt
 embeddings
 preprocess/patch_chaimeleon
 test
+*/__pycache__
+preprocess/patch_ct
+embeddings_ct
